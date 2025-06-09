@@ -11,24 +11,36 @@
     </header>
 
     <main>
-        <!-- 文档区 -->
+        <!-- ===== 简历 ===== -->
         <section>
-            <h2>文档作品</h2>
+            <h2>简历</h2>
             <div class="cards">
                 <article class="card">
-                    <h3>个人简历</h3>
+                    <h3>个人简历（PDF）</h3>
                     <div class="media-wrapper">
-                        <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://huzider.github.io/portfolio/docs/resume.docx"
-                                frameborder="0"></iframe>
+                        <!-- 直接用 <embed> 在线阅读 PDF；若浏览器不支持会给下载 -->
+                        <embed src="docs/resume.pdf" type="application/pdf">
                     </div>
-                    <p><a href="docs/resume.docx" download>下载 Word</a></p>
+                    <p><a href="docs/resume.pdf" download>下载 PDF</a></p>
                 </article>
-
-                <!-- 继续复制 card，可放更多文档 -->
             </div>
         </section>
 
-        <!-- 视频区 -->
+        <!-- ===== 游戏拆解 ===== -->
+        <section>
+            <h2>游戏拆解</h2>
+            <div class="cards">
+                <article class="card">
+                    <h3>XXX 游戏拆解报告</h3>
+                    <div class="media-wrapper">
+                        <embed src="docs/teardown.pdf" type="application/pdf">
+                    </div>
+                    <p><a href="docs/teardown.pdf" download>下载 PDF</a></p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===== 视频作品 ===== -->
         <section>
             <h2>视频作品</h2>
             <div class="cards">
@@ -40,10 +52,9 @@
                         </video>
                     </div>
                 </article>
-
-                <!-- 增加更多视频 card -->
             </div>
         </section>
     </main>
+
 </body>
 </html>
