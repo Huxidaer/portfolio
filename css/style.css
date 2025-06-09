@@ -1,11 +1,11 @@
-/* ---------- 全局变量 & 字体 ---------- */
+/* ---------- 字体 & 变量 ---------- */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap");
 
 :root {
     --c-primary: #0066cc;
-    --c-bg: #fff;
+    --c-bg: #ffffff;
     --c-surface: #fafafa;
-    --c-text: #333;
+    --c-text: #333333;
     --c-border: #e0e0e0;
     --radius: 10px;
     --shadow-1: 0 1px 3px rgba(0,0,0,.05);
@@ -24,7 +24,7 @@
     }
 }
 
-/* ---------- Reset & 文本 ---------- */
+/* ---------- Reset ---------- */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -69,27 +69,27 @@ a {
         text-decoration: underline;
     }
 
-/* ---------- Section 宽度 ---------- */
+/* ---------- Layout ---------- */
 section {
-    max-width: 90vw; /* 自适应整屏 */
+    width: 100%;
+    max-width: 1400px; /* 大屏留白适度 */
     margin: 0 auto var(--space-3);
     padding: 0 var(--space-1);
 }
 
-/* ---------- 通用网格容器 ---------- */
 .card-group {
     display: grid;
     gap: var(--space-2);
     grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
 }
 
-/* 当 section 里只有孤立 card 也能居中放大 */
+/* 单独的 card（如简历）也能居中放大 */
 section > .card {
     max-width: 800px;
     margin: 0 auto var(--space-2);
 }
 
-/* ---------- 卡片 ---------- */
+/* ---------- Card ---------- */
 .card {
     background: var(--c-surface);
     border: 1px solid var(--c-border);
@@ -97,7 +97,7 @@ section > .card {
     box-shadow: var(--shadow-1);
     padding: var(--space-2) var(--space-3);
     position: relative;
-    transition: transform .25s ease,box-shadow .25s ease;
+    transition: transform .25s,box-shadow .25s;
 }
 
     .card:hover {
@@ -106,7 +106,7 @@ section > .card {
         z-index: 2;
     }
 
-/* ---------- 媒体容器 ---------- */
+/* ---------- Media ---------- */
 .media {
     position: relative;
     width: 100%;
@@ -128,13 +128,8 @@ section > .card {
     .media > embed {
         object-fit: contain;
     }
-    /* PDF */
-    .media > video {
-        object-fit: cover;
-    }
-/* 视频缩略图 */
 
-/* ---------- 视频卡片左右布局 ---------- */
+/* ---------- Video card (media-text) ---------- */
 .card.media-text {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -146,13 +141,14 @@ section > .card {
         margin: 0;
     }
 
-@media(max-width:600px) {
+@media (max-width:600px) {
     .card.media-text {
         grid-template-columns: 1fr;
     }
+    /* 手机上下排 */
 }
 
-/* ---------- 返回顶部按钮 ---------- */
+/* ---------- Back to top ---------- */
 #top {
     position: fixed;
     right: 1.6rem;
@@ -174,7 +170,7 @@ section > .card {
         pointer-events: auto;
     }
 
-/* ---------- 小屏字体 ---------- */
+/* ---------- Slightly larger font on very small screens ---------- */
 @media(max-width:420px) {
     body {
         font-size: 1.05rem;

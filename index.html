@@ -4,29 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>胡西达尔 · 作品集</title>
-
-    <!-- 全站视觉都在 style.css -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <!-- ===== 1. 简历 ===== -->
-    <section id="resume">
+    <section>
         <h1>个人简历</h1>
-
-        <div class="card">
-            <h3>Resume.pdf 在线预览</h3>
-            <div class="media">
-                <embed src="docs/resume.pdf" type="application/pdf" loading="lazy">
-            </div>
-            <p><a href="docs/resume.pdf" download>下载 PDF 文件</a></p>
+        <div class="card-group">
+            <article class="card">
+                <h3>Resume.pdf 在线预览</h3>
+                <div class="media">
+                    <embed src="docs/resume.pdf" type="application/pdf" loading="lazy">
+                </div>
+                <p><a href="docs/resume.pdf" download>下载 PDF 文件</a></p>
+            </article>
         </div>
     </section>
 
     <!-- ===== 2. 游戏拆解 ===== -->
-    <section id="teardowns">
+    <section>
         <h2>游戏拆解</h2>
-
         <div class="card-group">
             <article class="card">
                 <h3>Dota&nbsp;2 技能机制拆解分析</h3>
@@ -47,11 +45,10 @@
     </section>
 
     <!-- ===== 3. 视频作品 ===== -->
-    <section id="videos">
+    <section>
         <h2>视频作品</h2>
-
         <div class="card-group">
-            <!-- 视频卡片 1：左视频 + 右文字 -->
+
             <article class="card media-text">
                 <div class="media">
                     <video controls preload="none" poster="thumbs/FFBMontage.jpg">
@@ -59,12 +56,11 @@
                     </video>
                 </div>
                 <div class="card-body">
-                    <h3>FFB&nbsp;Montage</h3>
+                    <h3>FFB Montage</h3>
                     <p>90&nbsp;秒节奏剪辑，展示战斗动画与镜头动感。</p>
                 </div>
             </article>
 
-            <!-- 视频卡片 2 -->
             <article class="card media-text">
                 <div class="media">
                     <video controls preload="none" poster="thumbs/博物馆.jpg">
@@ -73,55 +69,17 @@
                 </div>
                 <div class="card-body">
                     <h3>博物馆</h3>
-                    <p>虚幻&nbsp;5 场景可视化，Lumen + Nanite 实时光照。</p>
+                    <p>虚幻&nbsp;5 场景可视化，演示 Lumen + Nanite 实时光照。</p>
                 </div>
             </article>
 
-            <!-- 视频卡片 3 -->
-            <article class="card media-text">
-                <div class="media">
-                    <video controls preload="none" poster="thumbs/九号生态圈.jpg">
-                        <source src="videos/九号生态圈.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="card-body">
-                    <h3>九号生态圈</h3>
-                    <p>视觉小说 Demo，展示剧情分支与 UI 动效。</p>
-                </div>
-            </article>
-
-            <!-- 视频卡片 4 -->
-            <article class="card media-text">
-                <div class="media">
-                    <video controls preload="none" poster="thumbs/向山进发.jpg">
-                        <source src="videos/向山进发.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="card-body">
-                    <h3>向山进发</h3>
-                    <p>2.5D 横版关卡，突出跳跃手感与分段难度设计。</p>
-                </div>
-            </article>
-
-            <!-- 视频卡片 5 -->
-            <article class="card media-text">
-                <div class="media">
-                    <video controls preload="none" poster="thumbs/新生入学.jpg">
-                        <source src="videos/新生入学.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="card-body">
-                    <h3>新生入学</h3>
-                    <p>高校迎新宣传片，负责分镜与后期剪辑。</p>
-                </div>
-            </article>
         </div>
     </section>
 
     <!-- 返回顶部按钮 -->
     <button id="top">↑</button>
 
-    <!-- 轻量脚本 -->
+    <!-- 轻量 JS -->
     <script>
         const topBtn = document.getElementById('top');
         window.addEventListener('scroll', () => {
