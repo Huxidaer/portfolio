@@ -1,11 +1,11 @@
-/* ¡ª¡ª ×ÖÌå & ±äÁ¿ ¡ª¡ª */
+ï»¿/* â€”â€”â€”â€”â€” å­—ä½“ & è®¾è®¡å˜é‡ â€”â€”â€”â€”â€” */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap");
 
 :root {
     --c-primary: #0066cc;
-    --c-bg: #fff;
+    --c-bg: #ffffff;
     --c-surface: #fafafa;
-    --c-text: #333;
+    --c-text: #333333;
     --c-border: #e0e0e0;
     --radius: 10px;
     --shadow-1: 0 1px 3px rgba(0,0,0,.05);
@@ -24,7 +24,7 @@
     }
 }
 
-/* ¡ª¡ª Reset ¡ª¡ª */
+/* â€”â€”â€”â€”â€” Reset â€”â€”â€”â€”â€” */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -66,27 +66,30 @@ a {
         text-decoration: underline;
     }
 
-/* ¡ª¡ª Çø¿é & Íø¸ñ ¡ª¡ª */
+/* â€”â€”â€”â€”â€” åŒºå— & ç½‘æ ¼å¸ƒå±€ â€”â€”â€”â€”â€” */
 section {
     width: 100%;
     padding: 0 var(--space-1);
     margin-bottom: var(--space-3);
 }
 
+/* ğŸ‘‰ ç½‘æ ¼ï¼šå¡ç‰‡æ”¾å¤§(â‰¥760px)å¹¶æ°´å¹³å±…ä¸­æ’å¸ƒ */
 .card-group {
     display: grid;
     gap: var(--space-2);
-    grid-template-columns: repeat(auto-fit,minmax(480px,1fr)); /* ×ÀÃæÄ¬ÈÏ 3 ÁĞ */
+    grid-template-columns: repeat(auto-fit,minmax(760px,1fr));
+    justify-items: center; /* åˆ—å†…å±…ä¸­ */
 }
 
+/* å•ç‹¬å¡ç‰‡ï¼ˆå¦‚ç®€å†ï¼‰åŒæ ·æ”¾å¤§å¹¶å±…ä¸­ */
 section > .card {
-    max-width: 800px;
+    max-width: 760px;
     margin: 0 auto var(--space-2);
 }
-/* µ¥¶À¿¨Æ¬¾ÓÖĞ */
 
-/* ¡ª¡ª ¿¨Æ¬ ¡ª¡ª */
+/* â€”â€”â€”â€”â€” å¡ç‰‡åŸºæ ·å¼ â€”â€”â€”â€”â€” */
 .card {
+    width: 100%;
     background: var(--c-surface);
     border: 1px solid var(--c-border);
     border-radius: var(--radius);
@@ -101,7 +104,7 @@ section > .card {
         z-index: 2;
     }
 
-/* ¡ª¡ª Ã½Ìå ¡ª¡ª */
+/* â€”â€”â€”â€”â€” åª’ä½“å®¹å™¨ â€”â€”â€”â€”â€” */
 .media {
     position: relative;
     width: 100%;
@@ -123,9 +126,9 @@ section > .card {
     .media > embed {
         object-fit: contain;
     }
-/* PDF */
+/* PDF å®Œæ•´æ˜¾ç¤º */
 
-/* ¡ª¡ª ÊÓÆµ¿¨Æ¬×óÓÒ²¼¾Ö ¡ª¡ª */
+/* â€”â€”â€”â€”â€” è§†é¢‘å¡ç‰‡ï¼šå·¦è§†é¢‘å³æ–‡å­— â€”â€”â€”â€”â€” */
 .card.media-text {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -137,14 +140,20 @@ section > .card {
         margin: 0;
     }
 
+/* çª—å£ < 960px æ—¶ä¸Šä¸‹æ’ï¼Œ< 800px æ—¶å•åˆ—ç½‘æ ¼ */
 @media(max-width:960px) {
     .card.media-text {
         grid-template-columns: 1fr;
     }
 }
-/* ´°¿ÚÕ­¸ÄÉÏÏÂÅÅ */
 
-/* ¡ª¡ª ·µ»Ø¶¥²¿ ¡ª¡ª */
+@media(max-width:800px) {
+    .card-group {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* â€”â€”â€”â€”â€” è¿”å›é¡¶éƒ¨æŒ‰é’® â€”â€”â€”â€”â€” */
 #top {
     position: fixed;
     right: 1.6rem;
