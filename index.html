@@ -2,171 +2,108 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>胡西达尔 · 作品集</title>
 
-    <!-- 字体 & 简易样式（纯 CSS 不依赖框架） -->
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap");
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0
-        }
-
-        body {
-            font-family: "Noto Sans SC",Arial,Helvetica,sans-serif;
-            color: #333;
-            line-height: 1.6
-        }
-
-        h1, h2 {
-            margin: 1.5rem 0 .8rem
-        }
-
-        section {
-            max-width: 900px;
-            margin: 0 auto 3rem;
-            padding: 0 1rem
-        }
-
-        .card {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            box-shadow: 0 1px 2px rgba(0,0,0,.04);
-            padding: 1rem;
-            margin-bottom: 1.5rem
-        }
-
-            .card h3 {
-                margin-bottom: .6rem;
-                font-size: 1.1rem
-            }
-
-        .media {
-            position: relative;
-            padding-top: 56.25%
-        }
-            /* 16:9 */
-            .media > * {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%
-            }
-
-        a {
-            color: #0066cc;
-            text-decoration: none
-        }
-
-            a:hover {
-                text-decoration: underline
-            }
-    </style>
+    <!-- 只保留一个外链样式表，所有视觉都在 style.css -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- ================= 1. 简历 ================= -->
+    <!-- ========= 1. 简历 ========= -->
     <section id="resume">
         <h1>个人简历</h1>
 
         <div class="card">
             <h3>Resume.pdf 在线预览</h3>
-
-            <!-- 内嵌 PDF，宽高自动随卡片适配 -->
             <div class="media">
-                <embed src="docs/resume.pdf" type="application/pdf">
+                <embed src="docs/resume.pdf" type="application/pdf" loading="lazy">
             </div>
-
-            <p style="margin-top:.8rem">
-                <a href="docs/resume.pdf" download>下载 PDF 文件</a>
-            </p>
+            <p><a href="docs/resume.pdf" download>下载 PDF 文件</a></p>
         </div>
     </section>
 
-    <!-- ================= 2. 游戏拆解（多个 PDF） =============== -->
+    <!-- ========= 2. 游戏拆解 ========= -->
     <section id="teardowns">
         <h2>游戏拆解</h2>
 
-        <!-- ★ Dota2 技能机制拆解分析 -->
-        <div class="card">
-            <h3>Dota 2 技能机制拆解分析</h3>
-            <div class="media">
-                <embed src="docs/Dota2技能机制拆解分析.pdf" type="application/pdf">
-            </div>
-            <p style="margin-top:.8rem">
-                <a href="docs/Dota2技能机制拆解分析.pdf" download>下载 PDF</a>
-            </p>
-        </div>
+        <div class="card-group">
+            <!-- ★ 网格容器：card-group -->
+            <article class="card">
+                <h3>Dota 2 技能机制拆解分析</h3>
+                <div class="media">
+                    <embed src="docs/Dota2技能机制拆解分析.pdf" type="application/pdf" loading="lazy">
+                </div>
+                <p><a href="docs/Dota2技能机制拆解分析.pdf" download>下载 PDF</a></p>
+            </article>
 
-        <!-- ★ 战地 1 关卡设计拆解分析 -->
-        <div class="card">
-            <h3>战地 1 关卡设计拆解分析</h3>
-            <div class="media">
-                <embed src="docs/战地1关卡设计拆解分析.pdf" type="application/pdf">
-            </div>
-            <p style="margin-top:.8rem">
-                <a href="docs/战地1关卡设计拆解分析.pdf" download>下载 PDF</a>
-            </p>
+            <article class="card">
+                <h3>战地 1 关卡设计拆解分析</h3>
+                <div class="media">
+                    <embed src="docs/战地1关卡设计拆解分析.pdf" type="application/pdf" loading="lazy">
+                </div>
+                <p><a href="docs/战地1关卡设计拆解分析.pdf" download>下载 PDF</a></p>
+            </article>
+            <!-- 需要的话继续添加更多 card … -->
         </div>
     </section>
 
-    <!-- ================= 3. 视频作品（多个 MP4） ================= -->
+    <!-- ========= 3. 视频作品 ========= -->
     <section id="videos">
         <h2>视频作品</h2>
 
-        <!-- ★ 1. FFBMontage -->
-        <div class="card">
-            <h3>FFB Montage</h3>
-            <div class="media">
-                <video controls>
-                    <source src="videos/FFBMontage.mp4" type="video/mp4">
-                    您的浏览器不支持 HTML5 视频。
-                </video>
-            </div>
-        </div>
+        <div class="card-group">
+            <article class="card">
+                <h3>FFB Montage</h3>
+                <div class="media">
+                    <video controls preload="none" poster="thumbs/FFBMontage.jpg">
+                        <source src="videos/FFBMontage.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </article>
 
-        <!-- ★ 2. 博物馆 -->
-        <div class="card">
-            <h3>博物馆</h3>
-            <div class="media">
-                <video controls>
-                    <source src="videos/博物馆.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
+            <article class="card">
+                <h3>博物馆</h3>
+                <div class="media">
+                    <video controls preload="none" poster="thumbs/博物馆.jpg">
+                        <source src="videos/博物馆.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </article>
 
-        <!-- ★ 3. 九号生态圈 -->
-        <div class="card">
-            <h3>九号生态圈</h3>
-            <div class="media">
-                <video controls>
-                    <source src="videos/九号生态圈.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
+            <article class="card">
+                <h3>九号生态圈</h3>
+                <div class="media">
+                    <video controls preload="none" poster="thumbs/九号生态圈.jpg">
+                        <source src="videos/九号生态圈.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </article>
 
-        <!-- ★ 4. 向山进发 -->
-        <div class="card">
-            <h3>向山进发</h3>
-            <div class="media">
-                <video controls>
-                    <source src="videos/向山进发.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
+            <article class="card">
+                <h3>向山进发</h3>
+                <div class="media">
+                    <video controls preload="none" poster="thumbs/向山进发.jpg">
+                        <source src="videos/向山进发.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </article>
 
-        <!-- ★ 5. 新生入学 -->
-        <div class="card">
-            <h3>新生入学</h3>
-            <div class="media">
-                <video controls>
-                    <source src="videos/新生入学.mp4" type="video/mp4">
-                </video>
-            </div>
+            <article class="card">
+                <h3>新生入学</h3>
+                <div class="media">
+                    <video controls preload="none" poster="thumbs/新生入学.jpg">
+                        <source src="videos/新生入学.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </article>
         </div>
     </section>
+
+    <!-- 返回顶部按钮：真正显示/隐藏交给 CSS + JS -->
+    <button id="top">↑</button>
+
+    <!-- 可选：把 tiny JS 逻辑单独放 main.js；也可以直接写在这里 -->
+    <script src="main.js"></script>
 </body>
 </html>
