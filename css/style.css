@@ -1,4 +1,4 @@
-﻿/* ————— 字体 & 设计变量 ————— */
+﻿/* ————— 字体 & 变量 ————— */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap");
 
 :root {
@@ -66,30 +66,31 @@ a {
         text-decoration: underline;
     }
 
-/* ————— 区块 & 网格布局 ————— */
+/* ————— Section ————— */
 section {
     width: 100%;
     padding: 0 var(--space-1);
     margin-bottom: var(--space-3);
 }
 
-/* 👉 网格：卡片放大(≥760px)并水平居中排布 */
+/* ————— Flex 布局：卡片放大并水平居中 ————— */
 .card-group {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap; /* 换行 */
     gap: var(--space-2);
-    grid-template-columns: repeat(auto-fit,minmax(760px,1fr));
-    justify-items: center; /* 列内居中 */
+    justify-content: center; /* 整组居中 */
 }
 
-/* 单独卡片（如简历）同样放大并居中 */
+/* 单独卡片（简历）同样放大并居中 */
 section > .card {
     max-width: 760px;
     margin: 0 auto var(--space-2);
 }
 
-/* ————— 卡片基样式 ————— */
+/* ————— 卡片 ————— */
 .card {
-    width: 100%;
+    width: 760px; /* 桌面放大尺寸 */
+    max-width: 100%; /* 窄屏自适应 */
     background: var(--c-surface);
     border: 1px solid var(--c-border);
     border-radius: var(--radius);
@@ -140,15 +141,8 @@ section > .card {
         margin: 0;
     }
 
-/* 窗口 < 960px 时上下排，< 800px 时单列网格 */
 @media(max-width:960px) {
     .card.media-text {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media(max-width:800px) {
-    .card-group {
         grid-template-columns: 1fr;
     }
 }
