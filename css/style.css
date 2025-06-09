@@ -2,23 +2,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap");
 
 :root {
-    /* 颜色 */
     --c-primary: #0066cc;
     --c-bg: #ffffff;
     --c-surface: #fafafa;
     --c-text: #333333;
     --c-border: #e0e0e0;
-    /* 圆角 & 阴影 */
     --radius: 10px;
-    --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.05);
-    --shadow-2: 0 8px 24px rgba(0, 0, 0, 0.08);
-    /* 间距 */
-    --space-1: 0.8rem;
+    --shadow-1: 0 1px 3px rgba(0,0,0,.05);
+    --shadow-2: 0 8px 24px rgba(0,0,0,.08);
+    --space-1: .8rem;
     --space-2: 1.6rem;
     --space-3: 2.4rem;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme:dark) {
     :root {
         --c-bg: #121212;
         --c-surface: #1e1e1e;
@@ -28,9 +25,7 @@
 }
 
 /* =========== Reset & 基础文字 =========== */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -41,15 +36,14 @@ html {
 }
 
 body {
-    font-family: "Noto Sans SC", Arial, Helvetica, sans-serif;
+    font-family: "Noto Sans SC",Arial,Helvetica,sans-serif;
     background: var(--c-bg);
     color: var(--c-text);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2 {
+h1, h2 {
     margin: var(--space-3) 0 var(--space-1);
     font-weight: 700;
     line-height: 1.3;
@@ -61,18 +55,15 @@ h3 {
     font-weight: 700;
 }
 
-p,
-a,
-embed,
-video {
-    font-size: 0.95rem;
+p, a, embed, video {
+    font-size: .95rem;
 }
 
 /* =========== 链接 =========== */
 a {
     color: var(--c-primary);
     text-decoration: none;
-    transition: color 0.2s;
+    transition: color .2s;
 }
 
     a:hover {
@@ -81,7 +72,7 @@ a {
 
 /* =========== Section & 自适应网格 =========== */
 section {
-    max-width: 1100px; /* 由 900 提升到 1100，给大屏更多呼吸感 */
+    max-width: 1100px;
     margin: 0 auto var(--space-3);
     padding: 0 var(--space-1);
 }
@@ -89,7 +80,7 @@ section {
     section:not(:first-of-type) .card-group {
         display: grid;
         gap: var(--space-2);
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); /* ← 修改处 */
     }
 
 /* =========== 卡片 =========== */
@@ -99,7 +90,7 @@ section {
     border-radius: var(--radius);
     box-shadow: var(--shadow-1);
     padding: var(--space-2);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform .25s ease,box-shadow .25s ease;
 }
 
     .card:hover {
@@ -110,7 +101,7 @@ section {
 /* =========== 媒体占位 =========== */
 .media {
     position: relative;
-    aspect-ratio: 16 / 9; /* 替代老式 padding-top 技巧 */
+    aspect-ratio: 16/9;
     overflow: hidden;
     border-radius: var(--radius);
     margin-bottom: var(--space-1);
@@ -118,28 +109,32 @@ section {
 
     .media > * {
         position: absolute;
+        inset: 0;
         width: 100%;
         height: 100%;
-        inset: 0;
-        object-fit: cover; /* 视频/封面裁切更自然 */
+        object-fit: cover;
         border: 0;
     }
+    /* ← 新增：PDF 不裁剪 */
+    .media > embed {
+        object-fit: contain;
+    }
 
-/* =========== “返回顶部” 按钮（HTML里已经有 id="top"） =========== */
+/* =========== 返回顶部按钮 =========== */
 #top {
     position: fixed;
     right: 1.6rem;
     bottom: 2rem;
-    padding: 0.6rem 1rem;
+    padding: .6rem 1rem;
     border: 0;
     border-radius: var(--radius);
     background: var(--c-primary);
     color: #fff;
-    font-size: 0.9rem;
+    font-size: .9rem;
     cursor: pointer;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s;
+    transition: opacity .3s;
 }
 
     #top.show {
@@ -147,8 +142,8 @@ section {
         pointer-events: auto;
     }
 
-/* =========== 小屏文字略大，保证可读性 =========== */
-@media (max-width: 420px) {
+/* =========== 小屏文字略大 =========== */
+@media (max-width:420px) {
     body {
         font-size: 1.05rem;
     }

@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>胡西达尔 · 作品集</title>
 
-    <!-- 只保留一个外链样式表，所有视觉都在 style.css -->
+    <!-- 只有这一行，其他样式全部写在 style.css -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- ========= 1. 简历 ========= -->
+    <!-- ===== 1. 简历 ===== -->
     <section id="resume">
         <h1>个人简历</h1>
 
@@ -23,12 +23,12 @@
         </div>
     </section>
 
-    <!-- ========= 2. 游戏拆解 ========= -->
+    <!-- ===== 2. 游戏拆解 ===== -->
     <section id="teardowns">
         <h2>游戏拆解</h2>
 
+        <!-- ① 这一层 .card-group 用来触发 CSS 网格 -->
         <div class="card-group">
-            <!-- ★ 网格容器：card-group -->
             <article class="card">
                 <h3>Dota 2 技能机制拆解分析</h3>
                 <div class="media">
@@ -44,20 +44,21 @@
                 </div>
                 <p><a href="docs/战地1关卡设计拆解分析.pdf" download>下载 PDF</a></p>
             </article>
-            <!-- 需要的话继续添加更多 card … -->
+
+            <!-- 想加更多拆解就继续复制 <article class="card">… -->
         </div>
     </section>
 
-    <!-- ========= 3. 视频作品 ========= -->
+    <!-- ===== 3. 视频作品 ===== -->
     <section id="videos">
         <h2>视频作品</h2>
 
         <div class="card-group">
             <article class="card">
-                <h3>FFB Montage</h3>
+                <h3>Fly Fishing Blues</h3>
                 <div class="media">
-                    <video controls preload="none" poster="thumbs/FFBMontage.jpg">
-                        <source src="videos/FFBMontage.mp4" type="video/mp4">
+                    <video controls preload="none" poster="thumbs/FlyFishingBlues.jpg">
+                        <source src="videos/FlyFishingBlues.mp4" type="video/mp4">
                     </video>
                 </div>
             </article>
@@ -100,10 +101,16 @@
         </div>
     </section>
 
-    <!-- 返回顶部按钮：真正显示/隐藏交给 CSS + JS -->
+    <!-- ↑ 返回顶部按钮：滚动 600px 后才出现 -->
     <button id="top">↑</button>
 
-    <!-- 可选：把 tiny JS 逻辑单独放 main.js；也可以直接写在这里 -->
-    <script src="main.js"></script>
+    <!-- 小脚本：放最底部，确保 HTML 元素都已加载 -->
+    <script>
+        const topBtn = document.getElementById('top');
+        window.addEventListener('scroll', () => {
+            topBtn.classList.toggle('show', window.scrollY > 600);
+        });
+        topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    </script>
 </body>
 </html>
