@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>胡西达尔 · 作品集</title>
 
-    <!-- 只有这一行，其他样式全部写在 style.css -->
+    <!-- 全站视觉都在 style.css -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -27,10 +27,9 @@
     <section id="teardowns">
         <h2>游戏拆解</h2>
 
-        <!-- ① 这一层 .card-group 用来触发 CSS 网格 -->
         <div class="card-group">
             <article class="card">
-                <h3>Dota 2 技能机制拆解分析</h3>
+                <h3>Dota&nbsp;2 技能机制拆解分析</h3>
                 <div class="media">
                     <embed src="docs/Dota2技能机制拆解分析.pdf" type="application/pdf" loading="lazy">
                 </div>
@@ -38,14 +37,12 @@
             </article>
 
             <article class="card">
-                <h3>战地 1 关卡设计拆解分析</h3>
+                <h3>战地&nbsp;1 关卡设计拆解分析</h3>
                 <div class="media">
                     <embed src="docs/战地1关卡设计拆解分析.pdf" type="application/pdf" loading="lazy">
                 </div>
                 <p><a href="docs/战地1关卡设计拆解分析.pdf" download>下载 PDF</a></p>
             </article>
-
-            <!-- 想加更多拆解就继续复制 <article class="card">… -->
         </div>
     </section>
 
@@ -54,57 +51,77 @@
         <h2>视频作品</h2>
 
         <div class="card-group">
-            <article class="card">
-                <h3>Fly Fishing Blues</h3>
+            <!-- 视频卡片 1：左视频 + 右文字 -->
+            <article class="card media-text">
                 <div class="media">
-                    <video controls preload="none" poster="thumbs/FlyFishingBlues.jpg">
-                        <source src="videos/FlyFishingBlues.mp4" type="video/mp4">
+                    <video controls preload="none" poster="thumbs/FFBMontage.jpg">
+                        <source src="videos/FFBMontage.mp4" type="video/mp4">
                     </video>
+                </div>
+                <div class="card-body">
+                    <h3>FFB&nbsp;Montage</h3>
+                    <p>90&nbsp;秒节奏剪辑，展示战斗动画与镜头动感。</p>
                 </div>
             </article>
 
-            <article class="card">
-                <h3>博物馆</h3>
+            <!-- 视频卡片 2 -->
+            <article class="card media-text">
                 <div class="media">
                     <video controls preload="none" poster="thumbs/博物馆.jpg">
                         <source src="videos/博物馆.mp4" type="video/mp4">
                     </video>
                 </div>
+                <div class="card-body">
+                    <h3>博物馆</h3>
+                    <p>虚幻&nbsp;5 场景可视化，Lumen + Nanite 实时光照。</p>
+                </div>
             </article>
 
-            <article class="card">
-                <h3>九号生态圈</h3>
+            <!-- 视频卡片 3 -->
+            <article class="card media-text">
                 <div class="media">
                     <video controls preload="none" poster="thumbs/九号生态圈.jpg">
                         <source src="videos/九号生态圈.mp4" type="video/mp4">
                     </video>
                 </div>
+                <div class="card-body">
+                    <h3>九号生态圈</h3>
+                    <p>视觉小说 Demo，展示剧情分支与 UI 动效。</p>
+                </div>
             </article>
 
-            <article class="card">
-                <h3>向山进发</h3>
+            <!-- 视频卡片 4 -->
+            <article class="card media-text">
                 <div class="media">
                     <video controls preload="none" poster="thumbs/向山进发.jpg">
                         <source src="videos/向山进发.mp4" type="video/mp4">
                     </video>
                 </div>
+                <div class="card-body">
+                    <h3>向山进发</h3>
+                    <p>2.5D 横版关卡，突出跳跃手感与分段难度设计。</p>
+                </div>
             </article>
 
-            <article class="card">
-                <h3>新生入学</h3>
+            <!-- 视频卡片 5 -->
+            <article class="card media-text">
                 <div class="media">
                     <video controls preload="none" poster="thumbs/新生入学.jpg">
                         <source src="videos/新生入学.mp4" type="video/mp4">
                     </video>
                 </div>
+                <div class="card-body">
+                    <h3>新生入学</h3>
+                    <p>高校迎新宣传片，负责分镜与后期剪辑。</p>
+                </div>
             </article>
         </div>
     </section>
 
-    <!-- ↑ 返回顶部按钮：滚动 600px 后才出现 -->
+    <!-- 返回顶部按钮 -->
     <button id="top">↑</button>
 
-    <!-- 小脚本：放最底部，确保 HTML 元素都已加载 -->
+    <!-- 轻量脚本 -->
     <script>
         const topBtn = document.getElementById('top');
         window.addEventListener('scroll', () => {

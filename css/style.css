@@ -1,11 +1,11 @@
-/* =========== 全局变量 & 字体 =========== */
+/* ---------- 全局变量 & 字体 ---------- */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap");
 
 :root {
     --c-primary: #0066cc;
     --c-bg: #ffffff;
     --c-surface: #fafafa;
-    --c-text: #333333;
+    --c-text: #333;
     --c-border: #e0e0e0;
     --radius: 10px;
     --shadow-1: 0 1px 3px rgba(0,0,0,.05);
@@ -24,7 +24,7 @@
     }
 }
 
-/* =========== Reset & 基础文字 =========== */
+/* ---------- Reset & 文字 ---------- */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -59,7 +59,7 @@ p, a, embed, video {
     font-size: .95rem;
 }
 
-/* =========== 链接 =========== */
+/* ---------- 链接 ---------- */
 a {
     color: var(--c-primary);
     text-decoration: none;
@@ -70,7 +70,7 @@ a {
         text-decoration: underline;
     }
 
-/* =========== Section & 自适应网格 =========== */
+/* ---------- Section & 网格 ---------- */
 section {
     max-width: 1100px;
     margin: 0 auto var(--space-3);
@@ -80,10 +80,10 @@ section {
     section:not(:first-of-type) .card-group {
         display: grid;
         gap: var(--space-2);
-        grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); /* ← 修改处 */
+        grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
     }
 
-/* =========== 卡片 =========== */
+/* ---------- 卡片 ---------- */
 .card {
     background: var(--c-surface);
     border: 1px solid var(--c-border);
@@ -91,14 +91,16 @@ section {
     box-shadow: var(--shadow-1);
     padding: var(--space-2);
     transition: transform .25s ease,box-shadow .25s ease;
+    position: relative; /* 让 z-index 生效 */
 }
 
     .card:hover {
-        transform: translateY(-4px);
+        transform: scale(1.03) translateY(-4px);
         box-shadow: var(--shadow-2);
+        z-index: 2;
     }
 
-/* =========== 媒体占位 =========== */
+/* ---------- 媒体容器 ---------- */
 .media {
     position: relative;
     aspect-ratio: 16/9;
@@ -115,12 +117,36 @@ section {
         object-fit: cover;
         border: 0;
     }
-    /* ← 新增：PDF 不裁剪 */
+
     .media > embed {
         object-fit: contain;
     }
+    /* PDF 不裁剪 */
+    .media > video {
+        object-fit: cover;
+    }
+/* 缩略图填充 */
 
-/* =========== 返回顶部按钮 =========== */
+/* ---------- 视频卡片左右布局 ---------- */
+.card.media-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+    .card.media-text .media {
+        margin: 0;
+    }
+
+@media(max-width:600px) {
+    .card.media-text {
+        grid-template-columns: 1fr;
+    }
+    /* 手机改一列 */
+}
+
+/* ---------- 返回顶部按钮 ---------- */
 #top {
     position: fixed;
     right: 1.6rem;
@@ -142,8 +168,8 @@ section {
         pointer-events: auto;
     }
 
-/* =========== 小屏文字略大 =========== */
-@media (max-width:420px) {
+/* ---------- 小屏字体 ---------- */
+@media(max-width:420px) {
     body {
         font-size: 1.05rem;
     }
