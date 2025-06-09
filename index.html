@@ -3,34 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>我的作品集</title>
-    <style>
-        body {
-            font-family: Arial,Helvetica,sans-serif;
-            margin: 2rem;
-        }
-
-        iframe, video {
-            max-width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Hello，我是 **胡西达尔·木沙**</h1>
+    <header>
+        <h1>Hi，我是胡西</h1>
+    </header>
 
-    <!-- ===== 文档 ===== -->
-    <h2>文档</h2>
-    <!-- 在线阅读 Word；把用户名 / 仓库名 / 文件名替换成实际值 -->
-    <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://**你的GitHub用户名**.github.io/**portfolio**/docs/**resume.docx**"
-            width="100%" height="600" frameborder="0"></iframe>
-    <!-- 备用下载链接 -->
-    <p><a href="docs/**resume.docx**" download>下载 Word 文件</a></p>
+    <main>
+        <!-- 文档区 -->
+        <section>
+            <h2>文档作品</h2>
+            <div class="cards">
+                <article class="card">
+                    <h3>个人简历</h3>
+                    <div class="media-wrapper">
+                        <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://huzider.github.io/portfolio/docs/resume.docx"
+                                frameborder="0"></iframe>
+                    </div>
+                    <p><a href="docs/resume.docx" download>下载 Word</a></p>
+                </article>
 
-    <!-- ===== 视频 ===== -->
-    <h2>视频</h2>
-    <!-- 自托管小视频 -->
-    <video controls width="560">
-        <source src="videos/**intro.mp4**" type="video/mp4">
-        您的浏览器不支持 HTML5 视频。
-    </video>
+                <!-- 继续复制 card，可放更多文档 -->
+            </div>
+        </section>
+
+        <!-- 视频区 -->
+        <section>
+            <h2>视频作品</h2>
+            <div class="cards">
+                <article class="card">
+                    <h3>项目演示</h3>
+                    <div class="media-wrapper">
+                        <video controls poster="videos/cover.jpg">
+                            <source src="videos/intro.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </article>
+
+                <!-- 增加更多视频 card -->
+            </div>
+        </section>
+    </main>
 </body>
 </html>

@@ -1,0 +1,87 @@
+/* -------- 通用 -------- */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans SC",Arial,Helvetica,sans-serif;
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+/* -------- 布局 -------- */
+header {
+    background: #fafafa;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+    header h1 {
+        margin: 0;
+        font-size: 2rem;
+    }
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+/* 两列卡片排版（>=700 px 时） */
+.cards {
+    display: grid;
+    gap: 2rem;
+}
+
+@media(min-width:700px) {
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* -------- 卡片 -------- */
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+
+    .card h3 {
+        margin-top: 0;
+        font-size: 1.2rem;
+    }
+
+/* 嵌入媒体自适应宽高比 */
+.media-wrapper {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 */
+    overflow: hidden;
+}
+
+    .media-wrapper iframe,
+    .media-wrapper video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
