@@ -2,59 +2,140 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>我的作品集</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>胡西达尔 · 作品集</title>
+
+    <!-- 字体 & 简易样式（纯 CSS 不依赖框架） -->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap");
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: "Noto Sans SC",Arial,Helvetica,sans-serif;
+            color: #333;
+            line-height: 1.6
+        }
+
+        h1, h2 {
+            margin: 1.5rem 0 .8rem
+        }
+
+        section {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            padding: 0 1rem
+        }
+
+        .card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 1px 2px rgba(0,0,0,.04);
+            padding: 1rem;
+            margin-bottom: 1.5rem
+        }
+
+            .card h3 {
+                margin-bottom: .6rem;
+                font-size: 1.1rem
+            }
+
+        .media {
+            position: relative;
+            padding-top: 56.25%
+        }
+            /* 16:9 */
+            .media > * {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%
+            }
+
+        a {
+            color: #0066cc;
+            text-decoration: none
+        }
+
+            a:hover {
+                text-decoration: underline
+            }
+    </style>
 </head>
+
 <body>
-    <header>
-        <h1>Hi，我是胡西</h1>
-    </header>
-
-    <main>
-        <!-- ===== 简历 ===== -->
-        <section>
-            <h2>简历</h2>
-            <div class="cards">
-                <article class="card">
-                    <h3>个人简历（PDF）</h3>
-                    <div class="media-wrapper">
-                        <!-- 直接用 <embed> 在线阅读 PDF；若浏览器不支持会给下载 -->
-                        <embed src="docs/resume.pdf" type="application/pdf">
-                    </div>
-                    <p><a href="docs/resume.pdf" download>下载 PDF</a></p>
-                </article>
+    <!-- ================= 1. 简历 ================= -->
+    <section id="resume">
+        <h1>个人简历</h1>
+        <div class="card">
+            <h3>Resume.docx 在线预览</h3>
+            <div class="media">
+                <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=
+        https://YOUR-USERNAME.github.io/portfolio/docs/resume.docx"
+                        frameborder="0"></iframe>
             </div>
-        </section>
+            <p style="margin-top:.8rem">
+                <a href="docs/resume.docx" download>下载原始 Word 文件</a>
+            </p>
+        </div>
+    </section>
 
-        <!-- ===== 游戏拆解 ===== -->
-        <section>
-            <h2>游戏拆解</h2>
-            <div class="cards">
-                <article class="card">
-                    <h3>XXX 游戏拆解报告</h3>
-                    <div class="media-wrapper">
-                        <embed src="docs/teardown.pdf" type="application/pdf">
-                    </div>
-                    <p><a href="docs/teardown.pdf" download>下载 PDF</a></p>
-                </article>
+    <!-- ================= 2. 游戏拆解（多个 PDF） =============== -->
+    <section id="teardowns">
+        <h2>游戏拆解</h2>
+
+        <!-- ★ Dota2 技能机制拆解分析 -->
+        <div class="card">
+            <h3>Dota 2 技能机制拆解分析</h3>
+            <div class="media">
+                <embed src="docs/Dota2技能机制拆解分析.pdf" type="application/pdf">
             </div>
-        </section>
+            <p style="margin-top:.8rem">
+                <a href="docs/Dota2技能机制拆解分析.pdf" download>下载 PDF</a>
+            </p>
+        </div>
 
-        <!-- ===== 视频作品 ===== -->
-        <section>
-            <h2>视频作品</h2>
-            <div class="cards">
-                <article class="card">
-                    <h3>项目演示</h3>
-                    <div class="media-wrapper">
-                        <video controls poster="videos/cover.jpg">
-                            <source src="videos/intro.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </article>
+        <!-- ★ 战地 1 关卡设计拆解分析 -->
+        <div class="card">
+            <h3>战地 1 关卡设计拆解分析</h3>
+            <div class="media">
+                <embed src="docs/战地1关卡设计拆解分析.pdf" type="application/pdf">
             </div>
-        </section>
-    </main>
+            <p style="margin-top:.8rem">
+                <a href="docs/战地1关卡设计拆解分析.pdf" download>下载 PDF</a>
+            </p>
+        </div>
+    </section>
 
+    <!-- ================= 3. 视频作品（多个 MP4） ================= -->
+    <section id="videos">
+        <h2>视频作品</h2>
+
+        <!-- 🎬 复制下方 .card 块即可继续添加视频 -->
+        <div class="card">
+            <h3>Unity 关卡编辑器演示</h3>
+            <div class="media">
+                <video controls poster="videos/unity-editor-cover.jpg">
+                    <source src="videos/unity-editor-demo.mp4" type="video/mp4">
+                    您的浏览器不支持 HTML5 视频。
+                </video>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>UE5 角色技能效果</h3>
+            <div class="media">
+                <video controls>
+                    <source src="videos/ue5-skill-showcase.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <!-- 🎬 在此继续加更多视频 … -->
+
+    </section>
 </body>
 </html>
